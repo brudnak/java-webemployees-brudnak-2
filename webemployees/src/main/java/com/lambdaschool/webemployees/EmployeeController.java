@@ -15,13 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmployeeController {
 
     // localhost:2019/data/allemployees
-    @GetMapping(value = "/allemployees")
+    @GetMapping(value = "/allemployees",
+                produces = {"application/json"})
     public ResponseEntity<?> getAllEmployees() {
         return new ResponseEntity<>(WebemployeesApplication.ourEmpList.empList, HttpStatus.OK);
     }
 
     // localhost:2019/data/employee/2
-    @GetMapping(value = "/employee/{id}")
+    @GetMapping(value = "/employee/{id}",
+            produces = {"application/json"})
     public ResponseEntity<?> getEmpDetail(@PathVariable long id) {
         Employee rtnEmp = WebemployeesApplication.ourEmpList.findEmployee(e -> (e.getId() == id));
         return new ResponseEntity<>(rtnEmp, HttpStatus.OK);
