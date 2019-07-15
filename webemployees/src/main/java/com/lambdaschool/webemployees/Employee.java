@@ -13,4 +13,15 @@ public class Employee {
     private boolean has401K;
     private int companyID;
     private int healthPlanID;
+
+    // constructor
+    public Employee(String fname, String lname, double salary, boolean has401K, int companyID, int healthPlanID) {
+        this.id = counter.incrementAndGet();
+        this.fname = fname;
+        this.lname = lname;
+        this.salary = salary;
+        this.has401K = has401K;
+        this.companyID = companyID;
+        this.healthPlanID = healthPlanID;
+    }
 }
