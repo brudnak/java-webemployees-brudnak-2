@@ -78,4 +78,10 @@ public class Employee {
         this.healthPlanID = healthPlanID;
     }
     // end of - GETTERS & SETTERS
+
+    // TO STRING
+    @Override
+    public String toString() {
+        return "Employee{" + "id=" + id + ", fname='" + fname + '\'' + ", lname='" + lname + '\'' + ", salary=" + salary + ", has401K=" + has401K + ", companyID=" + companyID + ", healthPlanID=" + healthPlanID + '}';
+    }
 }
